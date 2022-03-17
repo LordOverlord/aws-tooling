@@ -10,5 +10,5 @@ while read line
 do
     echo "Deleting EBS: $line"
     aws ec2 delete-volume --volume-id $line $dryrun
-done < ebs.csv
+done < ebs1.csv
 echo $dryrun
