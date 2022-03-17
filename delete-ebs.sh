@@ -6,10 +6,9 @@ if [ -z "$dryrun" ]
 then
 dryrun='--dry-run'
 fi
-
+echo $dryrun
 while read line
 do
     echo "Deleting EBS: $line"
-    aws ec2 delete-volume --volume-id $line $dryrun
+    aws ec2 delete-volume --volume-id $line $dryrun --profile okta 
 done < ebs1.csv
-echo $dryrun
