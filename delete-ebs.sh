@@ -1,6 +1,6 @@
 #!bin/zsh
 dryrun=$1
-if [ -z "$dryrun"]
+if [ -z '$dryrun']
 then
 dryrun='--dry-run'
 fi
