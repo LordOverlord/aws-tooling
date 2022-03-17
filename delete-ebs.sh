@@ -1,3 +1,4 @@
-dryrun = '--dry-run'
-dryrun = $1
+#!bin/zsh
+dryrun='--dry-run'
+dryrun=$1
 echo $dryrun
