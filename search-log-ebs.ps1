@@ -1,6 +1,7 @@
 $currentdate = Get-Date -Format FileDateTime
 $filters = 'Name=status,Values=available'
-$loggin = aws ec2 describe-volumes --filters $filters --profile prod_roadnet --query "Volumes[*].{ID:VolumeId,Size:Size,Snapshot:SnapshotId}" --output text
+$aprofile = "okta"
+$loggin = aws ec2 describe-volumes --filters $filters --profile $aprofile --query "Volumes[*].{ID:VolumeId,Size:Size,Snapshot:SnapshotId}" --output text
 $loggin | Out-File -FilePath .\RNA-leftovers-$currentdate.csv
 
 $EBSsizes = aws ec2 describe-volumes --filters $filters --profile prod_roadnet --query "Volumes[*].{Size:Size}" --output text
